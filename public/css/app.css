@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+}
+
+header .logo img {
+  width: 400px;
+}
+
+header ul {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: #002d75;
+  padding: 20px;
+  font-size: 20px;
+}
+
+header ul li a:hover {
+  background-color: #b3e5fc;
+}
+
+.sezione-foto {
+  height: 500px;
+  background-image: url(/images/molisana-home.jpg?cb7db241726fb646d7e1c8553429c07c);
+}
+
