@@ -17,10 +17,46 @@ Route::get('/home', function () {
     return view('home');
 })->name('paginaHome');
 
+Route::get('/products', function () {
+    $pasta = config('pasta');
+
+    $pasta_lunga = array_filter($pasta, function($elemento) {
+        return $elemento['tipo'] == 'lunga';
+    });
+
+    $pasta_corta = array_filter($pasta, function($elemento) {
+        return $elemento['tipo'] == 'corta';
+    });
+
+    $pasta_cortissima = array_filter($pasta, function($elemento) {
+        return $elemento['tipo'] == 'cortissima';
+    });
+
+    $data = [
+        'formati' => [
+            'lunga' => $pasta_lunga,
+            'corta' => $pasta_corta,
+            'cortissima' => $pasta_cortissima
+        ]
+    ];
+
+    
+    return view('products', $data);
+})->name('paginaProdotti');
+
+Route::get('/dettaglio/{id}', function ($id) {
+
+    $pasta = config('pasta');
+
+    $prodotto = $pasta[$id];
+
+    $data = [
+        'formato' => $prodotto
+    ];
+
+    return view('dettagli', $data);
+})->name('paginaDettagli');
+
 Route::get('/news', function () {
     return view('news');
 })->name('paginaNotizie');
-
-Route::get('/products', function () {
-    return view('products');
-})->name('paginaProdotti');

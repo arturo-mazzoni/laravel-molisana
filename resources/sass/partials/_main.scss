@@ -1,4 +1,64 @@
 .sezione-foto {
-  height: 500px;
+  height: 600px;
   background-image: url('../../img/molisana-home.jpg');
+}
+
+.container h2 {
+  font-family: 'Redressed', cursive;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  h1 {
+    font-family: 'Redressed', cursive;
+    font-size: 45px;
+    margin: auto;
+  }
+
+  .card {
+    width: calc(100% / 3);
+    position: relative;
+
+    img {
+      max-width: 100%;
+    }
+
+    .overlay {
+      display: none;
+      position: absolute;  
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover .overlay {
+      display: block;
+    }
+
+    &:hover img {
+      opacity: 0.5;
+    }
+  }
+}
+
+.scheda-prodotto img {
+  display: block;
+  max-width: 100%;
+}
+
+.descrizione {
+  background-color: #b8dae4;
+
+  .info {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  p {
+    font-family: 'Redressed', cursive;
+    font-size: 30px;
+    padding: 30px;
+  }
 }

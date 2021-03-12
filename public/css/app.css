@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
 header {
   text-align: center;
 }
@@ -24,8 +33,9 @@ header ul li {
 header ul li a {
   text-decoration: none;
   color: #002d75;
-  padding: 20px;
+  padding: 10px;
   font-size: 20px;
+  border-radius: 10px;
 }
 
 header ul li a:hover {
@@ -33,7 +43,67 @@ header ul li a:hover {
 }
 
 .sezione-foto {
-  height: 500px;
+  height: 600px;
   background-image: url(/images/molisana-home.jpg?cb7db241726fb646d7e1c8553429c07c);
+}
+
+.container h2 {
+  font-family: "Redressed", cursive;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-container h1 {
+  font-family: "Redressed", cursive;
+  font-size: 45px;
+  margin: auto;
+}
+
+.card-container .card {
+  width: calc(100% / 3);
+  position: relative;
+}
+
+.card-container .card img {
+  max-width: 100%;
+}
+
+.card-container .card .overlay {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-container .card:hover .overlay {
+  display: block;
+}
+
+.card-container .card:hover img {
+  opacity: 0.5;
+}
+
+.scheda-prodotto img {
+  display: block;
+  max-width: 100%;
+}
+
+.descrizione {
+  background-color: #b8dae4;
+}
+
+.descrizione .info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.descrizione p {
+  font-family: "Redressed", cursive;
+  font-size: 30px;
+  padding: 30px;
 }
 
