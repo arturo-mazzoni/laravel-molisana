@@ -48,13 +48,18 @@ Route::get('/dettaglio/{id}', function ($id) {
 
     $pasta = config('pasta');
 
-    $prodotto = $pasta[$id];
+    if (is_numeric($id) && $id >= 0 && $id < count($pasta)){
+        $prodotto = $pasta[$id];
 
-    $data = [
-        'formato' => $prodotto
-    ];
+        $data = [
+            'formato' => $prodotto
+        ];
+    
+        return view('dettagli', $data);
+    } else {
+        abort('404');
+    }
 
-    return view('dettagli', $data);
 })->name('paginaDettagli');
 
 Route::get('/news', function () {
